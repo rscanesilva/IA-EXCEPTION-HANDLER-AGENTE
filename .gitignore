@@ -51,3 +51,6 @@ yarn.lock
 # Temp
 *.tmp
 *.swp
+
+# Micro-frontends (repositórios separados)
+front-mfe-menu/
