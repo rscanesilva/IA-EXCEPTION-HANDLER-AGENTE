@@ -18,7 +18,7 @@ on:
 
 jobs:
   publish-node-sdk:
-    name: Publish @exception-intelligence/sdk-node
+    name: Publish @rscdigital/sdk-node
     runs-on: ubuntu-latest
     if: >
       github.event_name == 'push' ||
@@ -50,7 +50,7 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
   publish-vue-sdk:
-    name: Publish @exception-intelligence/sdk-vue
+    name: Publish @rscdigital/sdk-vue
     runs-on: ubuntu-latest
     if: >
       github.event_name == 'push' ||
