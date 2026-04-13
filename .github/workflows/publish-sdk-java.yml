@@ -37,12 +37,12 @@ jobs:
           EOF
 
       - name: Run tests
-        run: mvn --no-transfer-progress -B test -pl exception-intelligence-sdk-java
+        run: mvn --no-transfer-progress -B test -pl sdks/java-springboot
 
       - name: Publish to Maven Central
         run: |
           mvn --no-transfer-progress -B deploy \
-            -pl exception-intelligence-sdk-java \
+            -pl sdks/java-springboot \
             -P release \
             -DskipTests \
             -Dgpg.passphrase=${{ secrets.GPG_PASSPHRASE }}
