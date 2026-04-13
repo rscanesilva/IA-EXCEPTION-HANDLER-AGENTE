@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: exception-intelligence-server
-  namespace: ia-agent-test
+  namespace: exception-agent
   labels:
     app: exception-intelligence-server
 spec:

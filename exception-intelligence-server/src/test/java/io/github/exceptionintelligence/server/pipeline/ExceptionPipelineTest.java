@@ -82,7 +82,8 @@ class ExceptionPipelineTest {
                                 "com.example.Service.method", 10, null, true))
                 ),
                 null,
-                "abc12345"
+                "abc12345",
+                null
         );
     }
 }

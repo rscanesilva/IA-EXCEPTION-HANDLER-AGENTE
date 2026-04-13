@@ -2,44 +2,44 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: exception-intelligence-server-config
-  namespace: ia-agent-test
+  namespace: exception-agent
 data:
   # ── LLM ────────────────────────────────────────────────────────────────────
-  EI_LLM_PROVIDER: "claude"          # claude | bedrock | openai | gemini
-  EI_CLAUDE_MODEL: "claude-sonnet-4-6"
-  EI_CLAUDE_MAX_TOKENS: "2048"
-  EI_CLAUDE_TIMEOUT_SECONDS: "30"
+  EXCEPTION_INTELLIGENCE_LLM_PROVIDER: "bedrock"   # claude | bedrock | openai | gemini
+  EXCEPTION_INTELLIGENCE_LLM_CLAUDE_MODEL: "claude-sonnet-4-6"
+  EXCEPTION_INTELLIGENCE_LLM_CLAUDE_MAX_TOKENS: "2048"
+  EXCEPTION_INTELLIGENCE_LLM_CLAUDE_TIMEOUT_SECONDS: "30"
+  EXCEPTION_INTELLIGENCE_LLM_BEDROCK_REGION: "us-east-1"
+  EXCEPTION_INTELLIGENCE_LLM_BEDROCK_MODEL_ID: "us.anthropic.claude-sonnet-4-6"
+  EXCEPTION_INTELLIGENCE_LLM_BEDROCK_MAX_TOKENS: "2048"
 
   # ── SCM ────────────────────────────────────────────────────────────────────
-  EI_SCM_PROVIDER: "github"
-  EI_GITHUB_BASE_BRANCH: "main"
-  EI_GITHUB_ISSUE_ENABLED: "true"
-  EI_GITHUB_PR_ENABLED: "true"
+  EXCEPTION_INTELLIGENCE_SCM_PROVIDER: "github"
+  EXCEPTION_INTELLIGENCE_SCM_GITHUB_BASE_BRANCH: "main"
+  EXCEPTION_INTELLIGENCE_SCM_GITHUB_ISSUE_ENABLED: "true"
+  EXCEPTION_INTELLIGENCE_SCM_GITHUB_PULL_REQUEST_ENABLED: "true"
 
   # ── Issue tracker ──────────────────────────────────────────────────────────
-  EI_ISSUE_TRACKER_TYPE: "jira"      # github | jira
+  EXCEPTION_INTELLIGENCE_ISSUE_TRACKER_TYPE: "jira"   # github | jira
 
   # ── Notifications ──────────────────────────────────────────────────────────
-  EI_TEAMS_ENABLED: "true"
-  EI_SLACK_ENABLED: "false"
+  EXCEPTION_INTELLIGENCE_NOTIFICATION_PROVIDER: "teams"
+  EXCEPTION_INTELLIGENCE_NOTIFICATION_TEAMS_ENABLED: "true"
+  EXCEPTION_INTELLIGENCE_NOTIFICATION_SLACK_ENABLED: "false"
 
   # ── Deduplication ──────────────────────────────────────────────────────────
-  EI_DEDUP_ENABLED: "true"
-  EI_DEDUP_TTL_MINUTES: "60"
-  EI_DEDUP_STORE: "memory"           # memory | redis
-  # Desabilita health check do Redis (não está sendo usado)
+  EXCEPTION_INTELLIGENCE_DEDUPLICATION_ENABLED: "true"
+  EXCEPTION_INTELLIGENCE_DEDUPLICATION_TTL_MINUTES: "60"
+  EXCEPTION_INTELLIGENCE_DEDUPLICATION_STORE: "memory"   # memory | redis
   MANAGEMENT_HEALTH_REDIS_ENABLED: "false"
 
   # ── SQS ingest ─────────────────────────────────────────────────────────────
-  EI_SQS_ENABLED: "false"
-  # Desabilita a autoconfiguração do Spring Cloud AWS SQS (evita erro de região)
+  EXCEPTION_INTELLIGENCE_SQS_ENABLED: "false"
   SPRING_CLOUD_AWS_SQS_ENABLED: "false"
-  # Região AWS necessária para o Spring Cloud AWS mesmo que SQS esteja desabilitado
   SPRING_CLOUD_AWS_REGION_STATIC: "us-east-1"
 
   # ── Idioma das respostas do LLM ────────────────────────────────────────────
-  # Tag BCP-47. Padrão: pt-BR. Descomente para alterar.
-  # EXCEPTION_INTELLIGENCE_RESPONSE_LANGUAGE: "en-US"
+  EXCEPTION_INTELLIGENCE_RESPONSE_LANGUAGE: "pt-BR"
 
   # ── Server ─────────────────────────────────────────────────────────────────
   SERVER_PORT: "8090"

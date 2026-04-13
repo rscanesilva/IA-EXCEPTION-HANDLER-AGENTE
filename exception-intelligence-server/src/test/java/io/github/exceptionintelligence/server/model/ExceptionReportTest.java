@@ -60,7 +60,8 @@ class ExceptionReportTest {
                 new ExceptionReport.ExceptionInfo(
                         "java.lang.NullPointerException", "NPE", null, frames),
                 null,
-                fingerprint
+                fingerprint,
+                null
         );
     }
 }

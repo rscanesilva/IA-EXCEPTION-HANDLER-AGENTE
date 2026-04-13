@@ -1,5 +1,6 @@
 package io.github.exceptionintelligence.server.ai;
 
+import io.github.exceptionintelligence.server.config.ServerProperties;
 import io.github.exceptionintelligence.server.model.ExceptionReport;
 import io.github.exceptionintelligence.server.model.StackFrame;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class LlmPromptBuilderTest {
 
-    private final LlmPromptBuilder builder = new LlmPromptBuilder();
+    private final LlmPromptBuilder builder = new LlmPromptBuilder(new ServerProperties());
 
     @Test
     void systemPromptContainsLanguage() {
@@ -60,7 +61,8 @@ class LlmPromptBuilderTest {
                 ),
                 new io.github.exceptionintelligence.server.model.RequestContextModel(
                         "POST", "/api/orders", null, null, "{\"id\":1}", null),
-                "fp12"
+                "fp12",
+                null
         );
     }
 }

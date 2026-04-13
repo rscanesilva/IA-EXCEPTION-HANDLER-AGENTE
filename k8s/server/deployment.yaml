@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: exception-intelligence-server
-  namespace: ia-agent-test
+  namespace: exception-agent
   labels:
     app: exception-intelligence-server
 spec:
@@ -21,7 +21,7 @@ spec:
       # Nenhum imagePullSecret é necessário.
       containers:
         - name: server
-          image: 700250599162.dkr.ecr.us-east-1.amazonaws.com/exception-intelligence-server:latest
+          image: <AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/exception-intelligence-server:latest
           ports:
             - containerPort: 8090
           envFrom:

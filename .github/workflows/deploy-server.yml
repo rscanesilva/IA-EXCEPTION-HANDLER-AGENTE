@@ -10,9 +10,9 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REGISTRY: 700250599162.dkr.ecr.us-east-1.amazonaws.com
+  ECR_REGISTRY: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com
   ECR_REPOSITORY: exception-intelligence-server
-  NAMESPACE: ia-agent-test
+  NAMESPACE: exception-agent
 
 jobs:
   build-and-push:
