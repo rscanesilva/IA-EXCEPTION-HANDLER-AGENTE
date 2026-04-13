@@ -41,7 +41,7 @@ jobs:
 
       - name: Publish to Maven Central
         run: |
-          mvn --no-transfer-progress -B deploy \
+          mvn -e --no-transfer-progress -B deploy \
             -pl sdks/java-springboot \
             -P release \
             -DskipTests \
