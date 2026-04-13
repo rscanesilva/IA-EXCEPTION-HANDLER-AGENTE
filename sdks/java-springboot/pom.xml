@@ -17,21 +17,47 @@
     <description>Spring Boot Starter that captures runtime exceptions and forwards them to the Exception Intelligence Server for analysis</description>
     <url>https://github.com/rscanesilva/IA-EXCEPTION-HANDLER-AGENTE</url>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>rscanesilva</id>
+            <name>Rafael Scane</name>
+            <email>rscanesilva@gmail.com</email>
+            <url>https://github.com/rscanesilva</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/rscanesilva/IA-EXCEPTION-HANDLER-AGENTE.git</connection>
+        <developerConnection>scm:git:ssh://github.com/rscanesilva/IA-EXCEPTION-HANDLER-AGENTE.git</developerConnection>
+        <url>https://github.com/rscanesilva/IA-EXCEPTION-HANDLER-AGENTE</url>
+    </scm>
+
     <dependencies>
         <!-- Spring Boot autoconfigure + web (provided by the host application) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.3.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>3.3.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>3.3.4</version>
             <optional>true</optional>
         </dependency>
 
@@ -39,12 +65,14 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>2.17.2</version>
         </dependency>
 
         <!-- Optional: publish via SQS instead of HTTP -->
         <dependency>
             <groupId>io.awspring.cloud</groupId>
             <artifactId>spring-cloud-aws-starter-sqs</artifactId>
+            <version>3.1.1</version>
             <optional>true</optional>
         </dependency>
 
@@ -52,6 +80,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.3.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
